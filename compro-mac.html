@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venda seu MacBook Pro</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  button {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Adicionando emojis ao título */
+  h1::after {
+    content: " 🚀";
+  }
+
+  /* Adicionando um ícone ao botão */
+  button::before {
+    content: "📩 ";
+  }
+
+  /* Adicionando espaço abaixo do formulário */
+  form {
+    margin-bottom: 20px;
+  }
+
+  /* Adicionando uma imagem de referência */
+  .reference-image {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Venda seu MacBook Pro</h1>
+  <p>Queremos facilitar para você vender seu MacBook Pro usado ou com defeitos. Preencha o formulário abaixo e entraremos em contato!</p>
+  <form id="leadForm">
+    <input type="text" placeholder="Nome do Cliente" required>
+    <input type="tel" placeholder="Telefone/WhatsApp" required>
+    <input type="text" placeholder="Modelo do MacBook a ser vendido" required>
+    <textarea placeholder="Comentários sobre algum erro com o Mac"></textarea>
+    <input type="text" placeholder="Melhor horário para contato">
+    <input type="text" placeholder="Melhor local para efetuar a compra">
+    <button type="submit">Enviar</button>
+  </form>
+  <p>Como funciona?</p>
+  <p>Após enviar o formulário, nossa equipe entrará em contato para discutir detalhes sobre o seu MacBook Pro. Você pode nos contar sobre qualquer problema que ele possa ter e nós avaliaremos a oferta. Nossa preferência é por locais de compra em shoppings, para sua conveniência.</p>
+  <img class="reference-image" src="referencia_macbook.jpg" alt="Referência MacBook Pro">
+</div>
+
+<script>
+  const leadForm = document.getElementById('leadForm');
+
+  leadForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Obter os valores dos campos do formulário
+    const nome = leadForm.querySelector('input[type="text"]').value;
+    const telefone = leadForm.querySelector('input[type="tel"]').value;
+    const modelo = leadForm.querySelectorAll('input[type="text"]')[1].value;
+    const comentarios = leadForm.querySelector('textarea').value;
+    const horarioContato = leadForm.querySelectorAll('input[type="text"]')[2].value;
+    const localCompra = leadForm.querySelectorAll('input[type="text"]')[3].value;
+
+    // Enviar os dados para onde você desejar (pode ser um servidor, por exemplo)
+    console.log('Dados do lead:');
+    console.log('Nome:', nome);
+    console.log('Telefone:', telefone);
+    console.log('Modelo:', modelo);
+    console.log('Comentários:', comentarios);
+    console.log('Horário para Contato:', horarioContato);
+    console.log('Local de Compra:', localCompra);
+
+    // Você pode adicionar aqui o código para enviar esses dados para um servidor ou realizar outras ações.
+  });
+</script>
+</body>
+</html>
